@@ -42,7 +42,7 @@
                     <a class="list-group-item" href="">
                         <h4 class="list-group-item-heading">Материал первый</h4>
                         <p class="list-group-item-text">
-                    Категория
+                    Категорияp
                     </a>
 
             </div>
