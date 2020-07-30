@@ -23,9 +23,16 @@
         <tr>
             <td>{{$category->title}}</td>
             <td>{{$category->published}}</td>
-            <td><a href="{{route('admin.category.edit',$category)}}">
-                    <i class="fa fa-edit"></i>
-                </a>
+            <td>
+            <form onsubmit="if(confirm('Удалить')){return true}else{return false}"
+                  action="{{route('admin.category.destroy', $category->id)}} " method="post">
+                <input type="hidden" name="_method" value="DELETE">
+                {{csrf_field()}}
+                <a  href="{{route('admin.category.edit', $category)}}"><i class="fa fa-edit"></i></a>
+                <button type="submit" class="btn">
+                    <i  class="fa fa-trash-o"></i>
+                </button>
+            </form>
             </td>
         </tr>
         @empty

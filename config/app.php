@@ -175,6 +175,10 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+        //composer require unisharp/laravel-ckeditor
+        Unisharp\Ckeditor\ServiceProvider::class,
+        //php artisan vendor:publish --tag=ckeditor
+        Unisharp\Laravelfilemanager\LaravelFilemanagerServiceProvider::class
     ],
 
     /*

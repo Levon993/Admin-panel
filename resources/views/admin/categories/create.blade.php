@@ -11,7 +11,7 @@
             @include('admin.categories.partials.form')
 
 
-            <input type="submit" class="btn btn-primary form-control" value="Добавить">
+            <input type="submit" name="created_by"   class="btn btn-primary form-control" value="Добавить">
         </form >
 
 

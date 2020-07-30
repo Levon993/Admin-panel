@@ -16,7 +16,7 @@
 <input type="text"  class="form-control" name="slug" placeholder="Автоматическая генерация" value="{{$category->slug ?? ""}}"   readonly>
 
 <label>Родительская Категория</label>
-<select class="form-control">
+<select class="form-control" name="parent_id">
     <option value="0">--Без родительской категории--</option>
    "@include('admin.categories.partials.categories',['categories' => $categories])
 
