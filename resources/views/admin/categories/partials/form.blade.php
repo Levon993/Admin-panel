@@ -1,29 +1,25 @@
-<label for="">Статус</label>
-<select class="form-control" name="published">
-@if(isset($category->id))
-        <option class="form-control" value="0" @if($category->published == 0) selected @endif>Не опубликовна </option>
-
-        <option class="form-control" value="1" @if($category->published == 1) selected @endif> Опубликовна </option>
-    @else
-        <option class="form-control" value="0">Не опубликовна </option>
-        <option class="form-control" value="1">Не опубликовна </option>
-
-    @endif
-
-</select>
-
-<label for="">Наименования</label>
-<input type="text" class="form-control" placeholder="Заголовок категории" value="{{$category->title ?? ""}}">
-
-<label for="">Slug</label>
-<input type="text" class="form-control default"  placeholder="Генерируется Автоматически" value="{{$category->slug ?? ""}}">
-
-<label>Родителькая категорич</label>
+<label> Статус </label>
 <select class="form-control">
-    <option value="0">--Нет родительско категории--</option>
-    @include('admin.categories.partials.categories')
+    @if(isset($category->id))
+        <option value="0" @if($category->published == 0) selected @endif> Не опубликованно</option>
+        <option value="1" @if($category->published == 1) selected @endif> Опубликованно</option>
+    @else
+        <option value="0"> Не опубликованно</option>
+        <option value="1"> Опубликованно</option>
+        @endif
+</select>
+<br>
+<label> Наименование Категории </label>
+<input type="text" class="form-control" name="title" placeholder="Заголовок категории" value="{{$category->title ?? ""}}"  required>
+
+<label> Slug </label>
+<input type="text"  class="form-control" name="slug" placeholder="Автоматическая генерация" value="{{$category->slug ?? ""}}"   readonly>
+
+<label>Родительская Категория</label>
+<select class="form-control">
+    <option value="0">--Без родительской категории--</option>
+   "@include('admin.categories.partials.categories',['categories' => $categories])
 
 </select>
-<hr>
 
-<input type="submit" class="btn btn-success" value="Отправить">
+
