@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('blog.home');
 });
 
 Auth::routes();
@@ -26,3 +26,5 @@ Route::resource('/category','CategoryController',['as' =>'admin']);
 
 
     });
+Route::get('blog/category/{slug?}','BlogController@category')->name('category');
+Route::get('blog/article/{slug?}','BlogController@article')->name('article');

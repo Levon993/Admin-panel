@@ -178,7 +178,10 @@ return [
         //composer require unisharp/laravel-ckeditor
         Unisharp\Ckeditor\ServiceProvider::class,
         //php artisan vendor:publish --tag=ckeditor
-        Unisharp\Laravelfilemanager\LaravelFilemanagerServiceProvider::class
+       // Unisharp\Laravelfilemanager\LaravelFilemanagerServiceProvider::class,
+
+
+        App\Providers\BlogServiceProvider::class
     ],
 
     /*
